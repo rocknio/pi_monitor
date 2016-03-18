@@ -1,0 +1,15 @@
+{
+    "show_video": true,
+    "use_dropbox": false,
+    "use_pi": false,
+    "dropbox_key": "cterenl1o6cadj2",
+    "dropbox_secret": "n5tca4zz6z9exqz",
+    "dropbox_base_path": "pi",
+    "min_upload_seconds": 3.0,
+    "min_motion_frames": 8,
+    "camera_warmup_time": 2.5,
+    "delta_thresh": 5,
+    "resolution": [640, 480],
+    "fps": 16,
+    "min_area": 5000
+}

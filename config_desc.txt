@@ -1,0 +1,24 @@
+show_video：一个布尔量，表明来自树莓派的视频流是否要在屏幕上显示。
+
+use_dropbox : 布尔量，表明是否要集成Dropbox API
+dropbox_key：你的公有Dropbox API key
+dropbox_secret：你的私有 Dropbox API key
+dropbox_base_path : 用于存放上传图片的Dropbox 应用程序目录的名字。
+
+min_upload_seconds :两次上传间需要等待的秒数。
+                    比如在我们启动脚本后5分33秒有图片被上传至Dropbox，第二张图片只有等到5分36秒时才会被上传。
+                    这个参数简单的控制了图片上传的频率。
+
+min_motion_frames : 图片被上传Dropbox之前，包含运动的连续帧帧数的最小值
+
+camera_warmup_time : 允许树莓派摄像头模块“热身”和校准的时间
+
+delta_thresh : 对于一个给定像素，当前帧与平均帧之间被“触发”看做是运动的最小绝对值差。
+                越小的值会导致更多的运动被检测到，更大的值会导致更少的运动被检测到。
+
+resolution : 来自树莓派的视频，其每一帧的宽和高。
+
+fps : 想要从树莓派摄像头每秒获取的帧数
+
+min_area : 图像中需要考虑是否发生运动的最小区域的最小值（像素为单位）。
+            越小的值会导致越多的区域被认为发生了运动，而min_area 的值越大的，则会只会标记更大的区域。
