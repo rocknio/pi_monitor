@@ -36,7 +36,7 @@ def deal_frame(s_frame, dropbox_client, pi_raw_capture):
     gray = cv2.cvtColor(s_frame, cv2.COLOR_BGR2GRAY)
     gray = cv2.GaussianBlur(gray, (21,21), 0)
 
-    cv2.imshow("Gray Feed", gray)
+    # cv2.imshow("Gray Feed", gray)
 
     global avg
     if avg is None:
@@ -52,14 +52,14 @@ def deal_frame(s_frame, dropbox_client, pi_raw_capture):
     cv2.accumulateWeighted(gray, avg, 0.5)
     framedelta = cv2.absdiff(gray, cv2.convertScaleAbs(avg))
 
-    cv2.imshow("framedelta Feed", framedelta)
+    # cv2.imshow("framedelta Feed", framedelta)
 
     # 对图像进行阀值化，膨胀阀值图像来填补孔洞，在阀值图像上找到轮廓线
     thresh = cv2.threshold(framedelta, conf["delta_thresh"], 255, cv2.THRESH_BINARY)[1]
     thresh = cv2.dilate(thresh, None, iterations=2)
     (cnts, _) = cv2.findContours(thresh.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 
-    cv2.imshow("thresh Feed", thresh)
+    # cv2.imshow("thresh Feed", thresh)
 
     # 遍历轮廓线
     for c in cnts:
