@@ -135,7 +135,7 @@ if conf["use_pi"]:
 
     # 等待摄像头模块启动，随后初始化平均帧，最后，上传时间戳，以及运动帧数计数器
     print "[INFO] warming up..."
-    time.sleep(conf["camera_warm_up_time"])
+    time.sleep(conf["camera_warmup_time"])
 
     # 从摄像头逐帧捕获图像
     for f in camera.capture_continuous(rawCapture, format="bgr", use_video_port=True):
